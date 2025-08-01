@@ -4,7 +4,6 @@ public class PlayerCamera : MonoBehaviour
 {
     [Header("References"), Space]
     [SerializeField] private Transform orientation;
-    [SerializeField] private Transform head;
 
     [Header("Camera Settings"), Space]
     [SerializeField] private float sensX;
@@ -46,6 +45,5 @@ public class PlayerCamera : MonoBehaviour
         //Rotate Camera and Orientation
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
-        head.rotation = Quaternion.Euler(xRotation, yRotation, 0);
     }
 }

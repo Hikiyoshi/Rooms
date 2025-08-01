@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("References"), Space]
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform orientation;
-    [SerializeField] private TMP_Text text;
 
     [Header("Keybinds"), Space]
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
@@ -69,8 +68,6 @@ public class PlayerMovement : MonoBehaviour
         MovementStateHandler();
 
         SpeedControl();
-
-        text.text = "Speed: " + new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z).magnitude;
 
         ApplyDrag();
 
