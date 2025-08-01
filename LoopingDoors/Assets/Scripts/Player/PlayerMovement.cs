@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement"), Space]
     [SerializeField] private float walkSpeed;
-    [SerializeField] private float runSpeed;
+    [SerializeField] private float sprintSpeed;
     [SerializeField] private float groundDrag;
     [SerializeField] private float intervalRunning;
     [SerializeField] private float intervalWaitToRun;
@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //Running State
             state = MovementState.running;
-            moveSpeed = runSpeed;
+            moveSpeed = sprintSpeed;
             return;
         }
     }

@@ -1,16 +1,22 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static GameManager Instance { get; private set; }
+
+    private void Awake()
     {
-        
+        if (Instance != null)
+        {
+            Debug.LogError("More than one GameManager instance");
+        }
+
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NextStage()
     {
-        
+        Debug.Log("Next Stage");
     }
 }
