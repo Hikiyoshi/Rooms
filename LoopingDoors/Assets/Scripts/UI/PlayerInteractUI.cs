@@ -6,7 +6,10 @@ public class PlayerInteractUI : MonoBehaviour
     [Header("References"), Space]
     [SerializeField] private PlayerInteract playerInteract;
     [SerializeField] private GameObject containerGameobject;
-    [SerializeField] private TMP_Text interactText;
+    [SerializeField] private TextMeshProUGUI interactText;
+    [SerializeField] private TextMeshProUGUI eText;
+    [SerializeField] private Color canInteractColor;
+    [SerializeField] private Color cannotInteractColor;
 
     private void Update()
     {
@@ -15,6 +18,15 @@ public class PlayerInteractUI : MonoBehaviour
         {
             Show();
             interactText.text = interactObject.GetInteractText();
+
+            if (interactObject.GetLockInteract())
+            {
+                eText.color = cannotInteractColor;
+            }
+            else
+            {
+                eText.color = canInteractColor;
+            }
         }
         else
         {
