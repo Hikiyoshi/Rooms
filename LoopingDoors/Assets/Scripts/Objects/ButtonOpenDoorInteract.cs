@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class ButtonOpenDoorInteract : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Transform doorPrefab;
-    [SerializeField] private Transform doorSpawnPosition;
+    [SerializeField] private GameObject OpenDoorGameObject;
 
     [SerializeField] private string interactText = "Push Button";
     [SerializeField] private bool lockInteract = false;
@@ -25,6 +24,15 @@ public class ButtonOpenDoorInteract : MonoBehaviour, IInteractable
 
     public void Interact(Transform interactorTransform)
     {
-        Transform doorTransform = Instantiate(doorPrefab, doorSpawnPosition.position, Quaternion.identity);
+        Debug.Log("Open Door");
+        Animator animator = OpenDoorGameObject.GetComponent<Animator>();
+        animator.SetTrigger("openDoor");
+        
+        SetLockInteract(true);
+    }
+
+    public void SetLockInteract(bool lockInteract)
+    {
+        this.lockInteract = lockInteract;
     }
 }

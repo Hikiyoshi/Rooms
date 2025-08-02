@@ -10,9 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform orientation;
 
     [Header("Keybinds"), Space]
-    [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode runKey = KeyCode.LeftShift;
-    [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
+    //[SerializeField] private KeyCode jumpKey = KeyCode.Space;
+    //[SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
 
     [Header("Movement"), Space]
     [SerializeField] private float walkSpeed;
@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float intervalRunning;
     [SerializeField] private float intervalWaitToRun;
 
+    /*
     [Header("Jump"), Space]
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpCooldown;
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Crouch"), Space]
     [SerializeField] private float crouchSpeed;
     [SerializeField] private float crouchHeightScale;
+    */
 
     [Header("Ground Check"), Space]
     [SerializeField] private float playerHeight;
@@ -41,8 +43,8 @@ public class PlayerMovement : MonoBehaviour
     private float _intervalWaitToRun;
     private bool isGrounded;
     private bool canRun = true;
-    private bool canJump = true;
-    private float startHeightScale;
+    //private bool canJump = true;
+    //private float startHeightScale;
     private MovementState state;
     public enum MovementState
     {
@@ -56,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.freezeRotation = true;
 
-        startHeightScale = transform.localScale.y;
+        //startHeightScale = transform.localScale.y;
     }
 
     private void Update()
@@ -114,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        /*
         if (Input.GetKey(crouchKey))
         {
             //Crouching State
@@ -121,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = crouchSpeed;
             return;
         }
+        */
 
         if (Input.GetKey(runKey) && canRun)
         {
@@ -148,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        //Jump
+        /*//Jump
         if (Input.GetKey(jumpKey) && canJump)
         {
             canJump = false;
@@ -168,6 +172,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(transform.localScale.x, startHeightScale, transform.localScale.z);
         }
+        */
     }
 
     private void CheckIsGrounded()
@@ -200,11 +205,12 @@ public class PlayerMovement : MonoBehaviour
             //On Ground
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
-        else
+        /*else
         {
             //In Air
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
         }
+        */
     }
 
     private void SpeedControl()
@@ -219,6 +225,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /*
     private void HandleJump()
     {
         //Reset y velocity
@@ -230,4 +237,5 @@ public class PlayerMovement : MonoBehaviour
     {
         canJump = true;
     }
+    */
 }

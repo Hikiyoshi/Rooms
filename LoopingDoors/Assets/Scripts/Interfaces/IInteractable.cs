@@ -6,4 +6,5 @@ public interface IInteractable
     public string GetInteractText();
     public Transform GetTransform();
     public bool GetLockInteract();
+    public void SetLockInteract(bool lockInteract);
 }

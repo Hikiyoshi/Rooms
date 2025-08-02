@@ -4,10 +4,8 @@ public class DoorHandler : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Bong");
-        if (other.TryGetComponent(out PlayerInteract playerInteract))
+        if (other.tag == "Player")
         {
-            Debug.Log("NextState");
             GameManager.Instance.NextStage();
         }
     }
