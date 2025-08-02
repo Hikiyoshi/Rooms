@@ -6,6 +6,7 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private Transform orientation;
 
     [Header("Camera Settings"), Space]
+    [SerializeField] private float startXCamera = 0f;
     [SerializeField] private float sensX;
     [SerializeField] private float sensY;
     [SerializeField] private float maxVerticalCameraRotation = 90f;
@@ -20,6 +21,7 @@ public class PlayerCamera : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        yRotation = startXCamera;
     }
 
     private void Update()

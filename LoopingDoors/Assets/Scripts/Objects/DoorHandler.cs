@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class DoorHandler : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "Player")
+        if (collision.transform.tag == "Player")
         {
             GameManager.Instance.NextStage();
         }
