@@ -3,7 +3,37 @@ guid: d044cabe502c8c44e9fa7c00d6f3e9fd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: b4b65786ab1968647910cce7ee0c59bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalCorrodedHeavy001_1K
+    second: {fileID: 2100000, guid: 70470008ac900fc4a80faed1317d4b99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poliigon_BrickWallReclaimed_8320_1K
+    second: {fileID: 2100000, guid: a9f80e8bfa0a377498600019411148b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poliigon_GrassPatchyGround_4585_1K
+    second: {fileID: 2100000, guid: b926d8cfe4c22d647a7a0f8d1cd8b99f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poliigon_WoodRoofShingle_7834_1K
+    second: {fileID: 2100000, guid: bdb6e96fa97da4748b548f94ead95ab7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TilesTravertine001_1K.002
+    second: {fileID: 2100000, guid: 2ce1750fb0f5b9c4f8346aaf3a75b53b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
