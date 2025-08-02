@@ -1,11 +1,15 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    public event Action OnStartGame;
 
     [Header("References"), Space]
     [SerializeField] private GameObject blinkGameObject;
@@ -29,6 +33,11 @@ public class GameManager : MonoBehaviour
     {
         if (StageManager.Stage == 0)
         {
+            return;
+        }
+        
+        if (StageManager.Stage == 1)
+        {
             StartCoroutine(WakeUp());
         }
         else
@@ -37,18 +46,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StartGame()
+    {
+        OnStartGame?.Invoke();
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+    }
+
     public void NextStage()
     {
-        Debug.Log("Next Stage");
         StageManager.Instance.UpdateStage(2);
 
         StartCoroutine(fadeOut());
-        
-        Invoke(nameof(loadNextStage), 1f);
+
+        Debug.Log("Next Stage: " + StageManager.Stage);
+        StartCoroutine(LoadSceneAferFadeOut());
     }
-    private void loadNextStage()
+    public IEnumerator LoadSceneAferFadeOut()
     {
-        SceneManager.LoadScene("SceneStage" + StageManager.Stage);
+        yield return new WaitForSeconds(1.2f);
+        StageManager.Instance.loadCurrentStage();
     }
 
     private IEnumerator WakeUp()
@@ -56,21 +76,21 @@ public class GameManager : MonoBehaviour
         playerMovement.enabled = false;
         playerCamera.enabled = false;
         blinkGameObject.SetActive(true);
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
         blinkGameObject.GetComponent<Animator>().SetTrigger("blinkEye");
         yield return new WaitForSeconds(2.5f);
         playerMovement.enabled = true;
         playerCamera.enabled = true;
     }
 
-    private IEnumerator fadeOut()
+    public IEnumerator fadeOut()
     {
         fadeOutGameObject.SetActive(true);
         fadeOutGameObject.GetComponent<Animator>().SetTrigger("fadeoutTrig");
         yield return new WaitForSeconds(1.5f);
         fadeOutGameObject.SetActive(false);
     }
-    private IEnumerator fadeIn()
+    public IEnumerator fadeIn()
     {
         fadeInGameObject.SetActive(true);
         fadeInGameObject.GetComponent<Animator>().SetTrigger("fadeinTrig");

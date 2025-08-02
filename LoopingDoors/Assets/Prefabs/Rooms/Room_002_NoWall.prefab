@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1514115707842845657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Room_002_NoWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,8 @@ GameObject:
   - component: {fileID: 8044092158017229836}
   - component: {fileID: 7360038751791519247}
   - component: {fileID: 1775045260983181934}
-  m_Layer: 0
+  - component: {fileID: 7859108577979360799}
+  m_Layer: 6
   m_Name: Room_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,3 +120,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7859108577979360799
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831807605217697249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6760760638932095304, guid: 2c0d1a4a9cec1614ab6f9e592b4a1095, type: 3}
