@@ -9,7 +9,7 @@ public sealed class AudioManager : MonoBehaviour
 	[Header("Audio Array"), Space]
 	public List<AudioEntry> audioEntries;
 
-	protected void Awake()
+	private void Awake()
 	{
 		if (Instance != null)
 		{
@@ -21,7 +21,7 @@ public sealed class AudioManager : MonoBehaviour
 			Instance = this;
 			DontDestroyOnLoad(this);
 		}
-		
+
 		foreach (var audio in audioEntries)
 		{
 			GameObject audioSourceHolder = new GameObject(audio.name);
@@ -36,6 +36,7 @@ public sealed class AudioManager : MonoBehaviour
 			audio.source.playOnAwake = false;
 		}
 
+		Play("Main Theme");
 	}
 
 	/// <summary>

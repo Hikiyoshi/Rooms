@@ -474,6 +474,15 @@ MonoBehaviour:
     pitch: 1
     isLooped: 0
     source: {fileID: 0}
+  - name: Main Theme
+    audioType: 1
+    clips:
+    - {fileID: 8300000, guid: cfac054eb597b974eb33a821a3635655, type: 3}
+    mixerGroup: {fileID: 7812333538392063323, guid: fa17d2e12f6abb04c8d952fa9dcc7385, type: 2}
+    volume: 1
+    pitch: 1
+    isLooped: 1
+    source: {fileID: 0}
 --- !u!4 &506747728
 Transform:
   m_ObjectHideFlags: 0
