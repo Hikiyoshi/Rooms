@@ -50,22 +50,14 @@ public class SpikeHandler : MonoBehaviour
         gameObject.GetComponent<SpikeHandler>().enabled = false;
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.TryGetComponent(out PlayerMovement player))
-        {
-            GameManager.Instance.GameOver();
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out PlayerMovement player))
-        {
-            GameManager.Instance.GameOver();
-        }
-
-        if (other.TryGetComponent(out SpikeHandler spikeHandler))
+	void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.TryGetComponent(out PlayerMovement player))
+		{
+			GameManager.Instance.GameOver();
+		}
+		
+		if (collision.gameObject.TryGetComponent(out SpikeHandler spikeHandler))
         {
             gameObject.GetComponent<SpikeHandler>().enabled = false;
             spikeHandler.enabled = false;

@@ -13,8 +13,8 @@ public sealed class AudioManager : MonoBehaviour
 	{
 		if (Instance != null)
 		{
+			Debug.LogWarning("More than 1 instance of AudioManager found, destroy the newest one.");
 			Destroy(this);
-			Debug.LogError("");
 		}
 		else
 		{
