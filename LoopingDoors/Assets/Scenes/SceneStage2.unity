@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168372aa941e30b468a86a7ea1106327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spikeSpeed: 0.03
+  spikeSpeed: 0.035
   isFacingRight: 0
 --- !u!4 &217325417 stripped
 Transform:
@@ -429,14 +429,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e7e7ac50f62a444899b663cec6188f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftSpikesTramsform: {fileID: 4837843098348729913}
-  rightSpikesTramsform: {fileID: 1480945256402458876}
-  leftWall: {fileID: 9220795937568469175}
-  rightWall: {fileID: 6715355990847260991}
+  doorsGameObject: {fileID: 0}
   currentStage:
     nameStage: 2
     timeWaitToStart: 15
-    timeToEndStage: 0
+    timeToEndStage: 120
+  timeDisappear: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,7 +2076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168372aa941e30b468a86a7ea1106327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spikeSpeed: 0.03
+  spikeSpeed: 0.035
   isFacingRight: 1
 --- !u!1 &1863858597
 GameObject:
@@ -2204,6 +2202,7 @@ MonoBehaviour:
   fadeInGameObject: {fileID: 1988533084}
   PauseMenuGameObject: {fileID: 860556115}
   GameOverMenuGameObject: {fileID: 1162483690}
+  WinGameObject: {fileID: 0}
   playerMovement: {fileID: 203847995}
   playerCamera: {fileID: 677886750}
 --- !u!1 &1975648677
@@ -2524,11 +2523,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6439622191077853088, guid: e4929106cec99b3449eb078d3c92b24a, type: 3}
   m_PrefabInstance: {fileID: 4901060943272685624}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1480945256402458876 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8418165988521469398, guid: 2b4f37fc4a90b5947b79d4a68b66004c, type: 3}
-  m_PrefabInstance: {fileID: 6943999221359181098}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1749118820138910320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2730,6 +2724,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259028810}
     m_Modifications:
+    - target: {fileID: 134619106083661246, guid: d7f6d7c7969487649b0e97f41cb29c17, type: 3}
+      propertyPath: OpenDoorGameObject
+      value: 
+      objectReference: {fileID: 1163238878787428411}
     - target: {fileID: 1506290027074705827, guid: d7f6d7c7969487649b0e97f41cb29c17, type: 3}
       propertyPath: m_LocalPosition.x
       value: -205.64
@@ -2787,11 +2785,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7f6d7c7969487649b0e97f41cb29c17, type: 3}
---- !u!4 &4837843098348729913 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2557325689230805779, guid: 2b4f37fc4a90b5947b79d4a68b66004c, type: 3}
-  m_PrefabInstance: {fileID: 6943999221359181098}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4901060943272685624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2849,11 +2842,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4929106cec99b3449eb078d3c92b24a, type: 3}
---- !u!4 &6715355990847260991 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4426957282631087125, guid: 2b4f37fc4a90b5947b79d4a68b66004c, type: 3}
-  m_PrefabInstance: {fileID: 6943999221359181098}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6943999221359181098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2944,11 +2932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7196096881077551224, guid: 2b4f37fc4a90b5947b79d4a68b66004c, type: 3}
       propertyPath: spikeSpeed
-      value: 0.03
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: 8826976535657042535, guid: 2b4f37fc4a90b5947b79d4a68b66004c, type: 3}
       propertyPath: m_AngularDrag
-      value: 0.03
+      value: 0.035
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3023,11 +3011,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cf5390064ae722469ee4b0a84431831, type: 3}
---- !u!4 &9220795937568469175 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2281305814219214237, guid: 2b4f37fc4a90b5947b79d4a68b66004c, type: 3}
-  m_PrefabInstance: {fileID: 6943999221359181098}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

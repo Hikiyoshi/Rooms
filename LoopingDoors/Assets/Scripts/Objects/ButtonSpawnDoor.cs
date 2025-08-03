@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ButtonSpawnDoor : MonoBehaviour, IInteractable
 {
+    [SerializeField] private SafeHandler safe;
     [SerializeField] private string interactText = "Interact";
     [SerializeField] private bool lockInteract = false;
 
@@ -23,6 +24,9 @@ public class ButtonSpawnDoor : MonoBehaviour, IInteractable
     public void Interact(Transform interactorTransform)
     {
         StageManager.Instance.SpawnDoor();
+
+        AudioManager.Instance.Play("Safe");
+        safe.SetLockInteract(false);
     }
 
     public void SetLockInteract(bool lockInteract)

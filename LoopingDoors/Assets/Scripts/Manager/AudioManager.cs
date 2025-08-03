@@ -13,10 +13,14 @@ public sealed class AudioManager : MonoBehaviour
 	{
 		if (Instance != null)
 		{
+			Destroy(this);
 			Debug.LogError("");
 		}
-
-		Instance = this;
+		else
+		{
+			Instance = this;
+			DontDestroyOnLoad(this);
+		}
 		
 		foreach (var audio in audioEntries)
 		{
@@ -31,6 +35,7 @@ public sealed class AudioManager : MonoBehaviour
 			audio.source.loop = audio.isLooped;
 			audio.source.playOnAwake = false;
 		}
+
 	}
 
 	/// <summary>

@@ -15,7 +15,7 @@ public class PlayerInteract : MonoBehaviour
         if (Input.GetKeyDown(interactKey))
         {
             IInteractable interactable = GetInteractableObject();
-            if (!interactable.GetLockInteract())
+            if (interactable != null && !interactable.GetLockInteract())
             {
                 interactable.Interact(transform);
             }

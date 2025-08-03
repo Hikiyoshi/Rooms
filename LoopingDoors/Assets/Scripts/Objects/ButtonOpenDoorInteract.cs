@@ -25,6 +25,8 @@ public class ButtonOpenDoorInteract : MonoBehaviour, IInteractable
     public void Interact(Transform interactorTransform)
     {
         Debug.Log("Open Door");
+        AudioManager.Instance.Play("Button");
+        AudioManager.Instance.Play("OpenDoor");
         Animator animator = OpenDoorGameObject.GetComponent<Animator>();
         animator.SetTrigger("openDoor");
         

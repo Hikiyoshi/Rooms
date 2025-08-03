@@ -54,11 +54,13 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        AudioManager.Instance.Play("RoomAmbience");
         OnStartGame?.Invoke();
     }
 
     public void QuitGame()
     {
+        Application.Quit();
         Debug.Log("Quit Game");
     }
 
@@ -84,7 +86,7 @@ public class GameManager : MonoBehaviour
     public void NextStage()
     {
         int currentStage = StageManager.Stage;
-        StageManager.Instance.UpdateStage(currentStage++);
+        StageManager.Instance.UpdateStage(++currentStage);
 
         StartCoroutine(fadeOut());
 
@@ -160,7 +162,8 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
-        
+        Time.timeScale = 0;
+        WinGameObject.SetActive(true);
     }
 
     public void BackToMainMenu()

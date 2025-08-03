@@ -134,6 +134,11 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = sprintSpeed;
             return;
         }
+
+        if (state == MovementState.walking)
+        {
+            AudioManager.Instance.Play("walk");
+        }
     }
 
     private void GetInput()
@@ -150,6 +155,7 @@ public class PlayerMovement : MonoBehaviour
         //Run
         if (Input.GetKeyDown(runKey) && canRun)
         {
+            AudioManager.Instance.Play("RunningOnGround");
             _intervalWaitToRun = intervalWaitToRun;
         }
 

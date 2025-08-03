@@ -23,6 +23,7 @@ public class SafeHandler : MonoBehaviour, IInteractable
 
     public void Interact(Transform interactorTransform)
     {
+        AudioManager.Instance.Play("clock");
         GameManager.Instance.Win();
     }
 

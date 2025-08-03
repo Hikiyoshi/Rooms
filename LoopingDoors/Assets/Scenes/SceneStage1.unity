@@ -306,6 +306,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e7e7ac50f62a444899b663cec6188f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorsGameObject: {fileID: 0}
+  currentStage:
+    nameStage: 
+    timeWaitToStart: 2
+    timeToEndStage: 0
+  timeDisappear: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1599,8 @@ MonoBehaviour:
   fadeOutGameObject: {fileID: 1018285964}
   fadeInGameObject: {fileID: 1988533084}
   PauseMenuGameObject: {fileID: 1714070608}
+  GameOverMenuGameObject: {fileID: 0}
+  WinGameObject: {fileID: 0}
   playerMovement: {fileID: 203847995}
   playerCamera: {fileID: 677886750}
 --- !u!1 &1975648677
@@ -1849,6 +1857,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 201867917}
     m_Modifications:
+    - target: {fileID: 134619106083661246, guid: d7f6d7c7969487649b0e97f41cb29c17, type: 3}
+      propertyPath: OpenDoorGameObject
+      value: 
+      objectReference: {fileID: 1163238878787428411}
     - target: {fileID: 1506290027074705827, guid: d7f6d7c7969487649b0e97f41cb29c17, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.016803741

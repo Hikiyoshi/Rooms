@@ -40,8 +40,6 @@ public class StageManager : MonoBehaviour
 
         _timeWaitToStart = currentStage.timeWaitToStart;
         _timeToEndStage = currentStage.timeToEndStage;
-
-        Stage = 3;
     }
 
     private void Update()
@@ -86,6 +84,7 @@ public class StageManager : MonoBehaviour
             return;
         }
 
+        AudioManager.Instance.Play("Spike");
         OnStartStage?.Invoke();
     }
 

@@ -26,10 +26,12 @@ public class StartGameUI : MonoBehaviour
         yield return new WaitForSeconds(.8f);
         DoorGameObject.GetComponent<Animator>().SetTrigger("openDoor");
         yield return new WaitForSeconds(1.5f);
+        AudioManager.Instance.Play("swoosh");
         cameraAnim.SetTrigger("play");
         yield return new WaitForSeconds(.7f);
         StartCoroutine(GameManager.Instance.fadeOut());
         yield return new WaitForSeconds(1.2f);
+        StageManager.Instance.UpdateStage(1);
         StageManager.Instance.loadCurrentStage();
     }
 }
