@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform orientation;
 
     [Header("Keybinds"), Space]
+    [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
     [SerializeField] private KeyCode runKey = KeyCode.LeftShift;
     //[SerializeField] private KeyCode jumpKey = KeyCode.Space;
     //[SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
@@ -133,16 +134,28 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = sprintSpeed;
             return;
         }
+
+        if (state == MovementState.walking)
+        {
+            AudioManager.Instance.Play("walk");
+        }
     }
 
     private void GetInput()
     {
+        if (Input.GetKeyDown(pauseKey))
+        {
+            GameManager.Instance.PauseGame();
+            return;
+        }
+
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
         //Run
         if (Input.GetKeyDown(runKey) && canRun)
         {
+            AudioManager.Instance.Play("RunningOnGround");
             _intervalWaitToRun = intervalWaitToRun;
         }
 
