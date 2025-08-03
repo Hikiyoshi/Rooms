@@ -12,17 +12,16 @@ public class StageManager : MonoBehaviour
     public static int Stage { get; private set; }
 
     [Header("References"), Space]
-    [SerializeField] private Transform leftSpikesTramsform;
-    [SerializeField] private Transform rightSpikesTramsform;
-    [SerializeField] private Transform leftWall;
-    [SerializeField] private Transform rightWall;
+    [SerializeField] private GameObject doorsGameObject;
 
     [Header("Stage Settings"), Space]
     [SerializeField] private Stage currentStage;
+    [SerializeField] private float timeDisappear;
 
     private bool start = false;
     private float _timeWaitToStart;
     private float _timeToEndStage;
+    private float _timeDisappear;
 
     private void Awake()
     {
@@ -42,7 +41,7 @@ public class StageManager : MonoBehaviour
         _timeWaitToStart = currentStage.timeWaitToStart;
         _timeToEndStage = currentStage.timeToEndStage;
 
-        Stage = 2;
+        Stage = 3;
     }
 
     private void Update()
@@ -53,8 +52,29 @@ public class StageManager : MonoBehaviour
                 Stage02Handler();
                 break;
             case 3:
+                Stage03Handler();
                 break;
         }
+    }
+
+    private void Stage03Handler()
+    {
+        _timeDisappear -= Time.deltaTime;
+        if (_timeDisappear <= 0f)
+        {
+            doorsGameObject.SetActive(false);
+        }
+    }
+
+    public void Stage03EndGame()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SpawnDoor()
+    {
+        _timeDisappear = timeDisappear;
+        doorsGameObject.SetActive(true);
     }
 
     private void Stage02Handler()

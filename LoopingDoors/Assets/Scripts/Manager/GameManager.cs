@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject fadeInGameObject;
     [SerializeField] private GameObject PauseMenuGameObject;
     [SerializeField] private GameObject GameOverMenuGameObject;
+    [SerializeField] private GameObject WinGameObject;
+
 
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerCamera playerCamera;
@@ -81,7 +83,8 @@ public class GameManager : MonoBehaviour
 
     public void NextStage()
     {
-        StageManager.Instance.UpdateStage(2);
+        int currentStage = StageManager.Stage;
+        StageManager.Instance.UpdateStage(currentStage++);
 
         StartCoroutine(fadeOut());
 
@@ -153,6 +156,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         StageManager.Instance.UpdateStage(1);
         StageManager.Instance.loadCurrentStage();
+    }
+
+    public void Win()
+    {
+        
     }
 
     public void BackToMainMenu()

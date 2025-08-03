@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 541044085739525261, guid: d3ba5fd32f9f4a64295cd7103f118373, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c907248319391e54b95384ff4242ac32, type: 2}
     - target: {fileID: 3363628873313785577, guid: d3ba5fd32f9f4a64295cd7103f118373, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8196016645541502997, guid: d3ba5fd32f9f4a64295cd7103f118373, type: 3}
       propertyPath: m_Name
-      value: Door Purple Variant
+      value: Door Red Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
