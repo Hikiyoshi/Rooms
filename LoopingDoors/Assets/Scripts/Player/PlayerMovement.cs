@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform orientation;
 
     [Header("Keybinds"), Space]
+    [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
     [SerializeField] private KeyCode runKey = KeyCode.LeftShift;
     //[SerializeField] private KeyCode jumpKey = KeyCode.Space;
     //[SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
@@ -137,6 +138,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void GetInput()
     {
+        if (Input.GetKeyDown(pauseKey))
+        {
+            GameManager.Instance.PauseGame();
+            return;
+        }
+
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
