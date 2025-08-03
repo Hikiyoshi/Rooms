@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public event Action OnStartGame;
+    public event Action OnGameOver;
 
     [Header("References"), Space]
     [SerializeField] private GameObject blinkGameObject;
     [SerializeField] private GameObject fadeOutGameObject;
     [SerializeField] private GameObject fadeInGameObject;
     [SerializeField] private GameObject PauseMenuGameObject;
+    [SerializeField] private GameObject GameOverMenuGameObject;
 
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerCamera playerCamera;
@@ -56,6 +58,25 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quit Game");
+    }
+
+    public void GameOver()
+    {
+        OnGameOver?.Invoke();
+
+        playerMovement.enabled = false;
+        playerCamera.enabled = false;
+
+        UnLockCursor();
+
+        Time.timeScale = 0;
+
+        GameOverMenuGameObject.SetActive(true);
+
+        if (StageManager.Stage == 2)
+        {
+            StageManager.Instance.EndMoveStage2();
+        }
     }
 
     public void NextStage()
@@ -127,6 +148,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void ReStartGame()
+    {
+        Time.timeScale = 1;
+        StageManager.Instance.UpdateStage(1);
+        StageManager.Instance.loadCurrentStage();
+    }
+
     public void BackToMainMenu()
     {
         playerMovement.enabled = false;
@@ -137,6 +165,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator FadeBeforeBackStartScene()
     {
         PauseMenuGameObject.SetActive(false);
+        GameOverMenuGameObject.SetActive(false);
         StartCoroutine(fadeOut());
         yield return new WaitForSeconds(1.3f);
         StageManager.Instance.UpdateStage(0);
