@@ -58,7 +58,7 @@ public class StageManager : MonoBehaviour
     private void Stage03Handler()
     {
         _timeDisappear -= Time.deltaTime;
-        if (_timeDisappear <= 0f)
+        if (_timeDisappear <= 0f && doorsGameObject != null)
         {
             doorsGameObject.SetActive(false);
         }
