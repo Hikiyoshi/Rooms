@@ -14,7 +14,7 @@ New challenges must be met to unlock new doors. As long as you're not giving up,
 - Blender
 - Audacity
 # LINK
-Check out the jam submission (Here)[https://itch.io/jam/gmtk-2025/rate/3780267].
+Check out the jam submission [Here](https://itch.io/jam/gmtk-2025/rate/3780267).
 
-Play directly (Here)[https://fuoken.itch.io/looping-doors].
+Play directly [Here](https://fuoken.itch.io/looping-doors).
 # INGAME CAPTUREs
