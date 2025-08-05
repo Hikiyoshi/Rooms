@@ -18,10 +18,10 @@ Check out the jam submission [Here](https://itch.io/jam/gmtk-2025/rate/3780267).
 
 Play directly [Here](https://fuoken.itch.io/looping-doors).
 # INGAME CAPTURES
-[](https://github.com/Hikiyoshi/Looping-Doors/blob/main/LoopingDoors/Image%20Captures/image2.png?raw=true)
+![image alt](https://github.com/Hikiyoshi/Looping-Doors/blob/main/LoopingDoors/Image%20Captures/image2.png?raw=true)
 
-[](https://github.com/Hikiyoshi/Looping-Doors/blob/main/LoopingDoors/Image%20Captures/image1.png?raw=true)
+![image alt](https://github.com/Hikiyoshi/Looping-Doors/blob/main/LoopingDoors/Image%20Captures/image1.png?raw=true)
 
-[](https://github.com/Hikiyoshi/Looping-Doors/blob/main/LoopingDoors/Image%20Captures/image.png?raw=true)
+![image alt](https://github.com/Hikiyoshi/Looping-Doors/blob/main/LoopingDoors/Image%20Captures/image.png?raw=true)
 
 _© 2024-2025 AForge Studios._
