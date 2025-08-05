@@ -1,13 +1,13 @@
 # LOOPING DOORS
 # OVERVIEW
-This game was entry for [GMTK Game Jam 2025](https://itch.io/jam/gmtk-2025), which started on July 31st, 2025. It was made within the last 4 days of the jam.
+This game was entry for [GMTK Game Jam 2025](https://itch.io/jam/gmtk-2025), which started on July 31st, 2025. It was made within **the last 4 days** of the jam.
 
 # DESCRIPTION
-Each door open to something new.
+Each door **open to something new**.
 
-Unpredictable challenges lie ahead, including strange traps, puzzles, and even bizarre creatures.
+__Unpredictable challenges__ lie ahead, including strange traps, puzzles, and even bizarre creatures.
 
-New challenges must be met to unlock new doors. As long as you're not giving up, you must be looking for something until the ultimate escape is achieved.
+New challenges must be met __to unlock new doors__. As long as you're not giving up, you **must be looking for** something until the ultimate escape is achieved.
 # TOOLS
 - Unity 6
 - Visual Studio Code
